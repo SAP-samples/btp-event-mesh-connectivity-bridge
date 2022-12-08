@@ -59,7 +59,7 @@ Follow the below steps to configure SAP S/4HANA, SAP BTP and Microsoft Azure Sys
 [Step 3: Onboard Connectors in SAP BTP](./tutorial/Step3-Onboard-Connectors/README.md)  
 [Step 4: Configure SAP S/4HANA](./tutorial/Step4-Configure-SAP-S4HANA/README.md)  
 [Step 5: Configure Event Subscription in Microsoft Azure](./tutorial/Step5-Configure-EventSubscription-Azure/README.md)  
-[Step 6: Create Microsoft Azure Function App](./tutorial/Step6-Create-Azure-function/README.md) 
+[Step 6: Create Microsoft Azure Function App](./tutorial/Step6-Create-Azure-function/README.md)  
 [Step 7: Test Application](./tutorial/Step7-Test-Your-Application/README.md)
 
 ## Additional Resources
