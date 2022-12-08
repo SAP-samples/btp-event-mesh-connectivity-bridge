@@ -1,4 +1,4 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-event-mesh-connectivity-bridge)](https://api.reuse.software/info/github.com/SAP-samples/btp-event-mesh-connectivity-bridge)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-msteams-s4-suppliercollab)](https://api.reuse.software/info/github.com/SAP-samples/btp-msteams-s4-suppliercollab)
 
 # Integrate Events Between SAP and Microsoft using SAP Event Mesh - Connectivity Bridge Service
 
