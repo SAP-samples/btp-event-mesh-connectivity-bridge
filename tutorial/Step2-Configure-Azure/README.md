@@ -88,6 +88,3 @@ In this section, you will create the Event Grid partner configuration and add pa
 
 Copy the value of the **Subscription** and **Subscription ID** field of the group you created. Also, copy the name of the **Storage account** resource you created. These value will be used later in the next step. 
 <p><img src="./images/18-completesetupforazure.png"></p>
-
-### Next Step
-[Onboard Connectors in SAP BTP](../Step3-Onboard-Connectors/README.md)

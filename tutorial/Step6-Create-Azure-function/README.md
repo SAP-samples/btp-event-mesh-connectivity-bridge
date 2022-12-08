@@ -159,6 +159,3 @@ Use Visual Studio Code to create a JavaScript function.
     Output shows deployment and settings uploads is successfull.
     
     <p><img src="./images/25.png"></p>
-
-### Next Step
-[Test End to End Integration Scenario](../Step7-Test-Your-Application/README.md)

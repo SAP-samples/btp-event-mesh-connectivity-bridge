@@ -22,7 +22,7 @@ You have Microsoft Azure Subscription to receive events from SAP Event Mesh Conn
 
     - In the **Endpoint Details** section, for the **Endpoint Types** field, select **Storage Queues** and choose **Select and endpoint**.
    
-    <p><img src="./images/03.png"</p>
+    <p><img src="./images/03.png"></p>
 
 5.  In the **Queues** popup, 
 
@@ -119,6 +119,3 @@ You have Microsoft Azure Subscription to receive events from SAP Event Mesh Conn
 11. Connection strings allow communication services SDKs to connect and authenticate to Microsoft Azure. Choose **Keys** to view the connection string details. Copy the value of the **Connection string**, this will be used later in Azure Function App.
 
     <p><img src="./images/24.png"></p>
-
-### Next Step
-[Create Microsoft Azure Function App](../Step6-Create-Azure-function/README.md)

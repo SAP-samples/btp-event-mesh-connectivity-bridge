@@ -58,6 +58,3 @@ The version of SAP S/4HANA system in this tutorial in SAP S/4HANA 2020. Refer to
     <p><img src="./images/10.png"></p>
 
 In this case, select **sap/s4/beh/purchaserequisition/v1/purchaserequisition/Created/***, this will ensure that any operation performed on the purchase requisition object is published to SAP Event Mesh.
-
-### Next Step
-[Configure Event Subscription in Microsoft Azure](../Step5-Configure-EventSubscription-Azure/README.md)

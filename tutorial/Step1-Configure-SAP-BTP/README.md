@@ -128,6 +128,3 @@ When you subscribe to the Event Mesh standard application plan in SAP BTP cockpi
 Users with permissions can access the application link and log in to the Event Mesh user interface.
 
 
-### Next Step
-[Configure Microsoft Azure Platform](../Step2-Configure-Azure/README.md)
-

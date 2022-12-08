@@ -107,5 +107,3 @@ Get credentials for publishing to event mesh for S4 On-prem
 
     The service key contains the API URL and the credentials under the property uaa (under url) that allows you to obtain a JWT token, with the help of which you can access the event mesh service instance.
 
-    ### Next Step
-    [Configure SAP S/4HANA](../Step4-Configure-SAP-S4HANA/README.md)
