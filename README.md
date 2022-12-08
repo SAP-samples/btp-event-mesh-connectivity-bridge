@@ -1,41 +1,116 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# [Title]
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
+# SAP Event Mesh - Connectivity Bridge Service
 
 ## Description
-<!-- Please include SEO-friendly description -->
+
+SAP Event Mesh is a fully-managed cloud service for enabling applications, integrations and extensions to communication asynchronously through events. Events are significatnt changes in state(for example, Business Partner updated in SAP S/4HANA).
+
+SAP Event Mesh-Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh - Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
+
+
+## Table of Contents
+[Scenario](#scenario)\
+[Solution Architecture](#solution-architecture)\
+[Requirements](#requirements)\
+[Implementation: Configuration and Development](#configuration-and-development)\
+[Additional Resources](#additional-resources)\
+[Known Issues](#known-issues)\
+[Reference](#useful-links)\
+[Disclaimer](#disclaimer)\
+[How to Obtain Support](#how-to-obtain-support)\
+[Code of Conduct](#codeofconduct)\
+[Contributing](#contributing)\
+[License](#license)
+
+## Scenario
+
+A SAP Business user creates a SAP Purchase Requisition in SAP S/4HANA which generates an event. The event gets published into a topic of SAP Event Mesh from which the event gets transported to Azure Event Grid’s partner topic. A queue bound with this partner topic (through Event Subscription) receives the event.
+
+## Business Process Flow
+
+1. Purchase Requisition gets created in S/4 HANA System. This change creates a notification event and Notice the payload has Purchase Requisition ID.   
+2. This event is sent to the Event Mesh
+3. Event Mesh instance with Connectivity Plan have two Connector (Azure Event Grid & S4-on-premise ) which configure in Subscription as publisher and subscriber. this subscription push the event to Event grid
+4. Queue Storage receive events that need to be pulled. we can use Queue storage when you have a long running process that takes too long to respond. 
+5. When a new item is received on a queue then the queue trigger start a function provided the queue message as input to the function. 
+6. Azure Function called the Azure communication service with queue message
+7. Azure Communication Service send Email notification to the Manager
+
+## Solution Architecture
+
+![alt](./images/architecture.png)
 
 ## Requirements
 
-## Download and Installation
+These are the technical prerequistics for an setting up integration between SAP Event Mesh and Azure Event Grid for SAP S/4HANA event.
 
+1.	A subaccount in SAP BTP with entitlements for Event Mesh plan “event-mesh-connectivity” - beta. Reach out to askgrid@sap.com in case you do not see this service in your subaccount.
+2.	SAP S/4HANA 2020(MQTT Adapter) or SAP S/4HANA 2021+(AMQP Adapter) system to act as an event publisher.
+3.	Microsoft Azure subscription. 
+4.  A verified Partner Registration ID. Reach out to askgrid@sap.com in case you do not have.   
+5.	Relevant service principals in Azure for provider, application, event flow.
+6.	Service principals with RBACs, roles given.
+
+## Configuration and Development
+
+Follow the below steps to configure SAP S/4HANA, SAP BTP and Microsoft Azure System for the scenario. Based on the installation type of SAP S/4HANA, please follow the documentation for configurations related to connectivity in SAP BTP.
+
+[Step 1: Set Up the Subaccount in SAP BTP](./tutorial/Step1-Configure-SAP-BTP/README.md)  
+[Step 2: Configure Microsoft Azure Platform](./tutorial/Step2-Configure-Azure/README.md)   
+[Step 3: Onboard Connectors in SAP BTP](./tutorial/Step3-Onboard-Connectors/README.md)  
+[Step 4: Configure SAP S/4HANA](./tutorial/Step4-Configure-SAP-S4HANA/README.md)  
+[Step 5: Configure Event Subscription in Microsoft Azure](./tutorial/Step5-Configure-EventSubscription-Azure/README.md)  
+[Step 6: Create Microsoft Azure Function App](./tutorial/Step6-Create-Azure-function/README.md)  
+[Step 7: Test Application](./tutorial/Step7-Test-Your-Application/README.md)
+
+## Additional Resources
+In this project, The Azure function has been implemented based on the following samples.
+
+* [Functions bindings storage queue trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger)
+* [send an email using Azure Communication Service](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/send-email?pivots=programming-language-javascript)
 ## Known Issues
-<!-- You may simply state "No known issues. -->
+
+Currently, no known issues that needs to be considered during the implementation. There will be updates to the repository. Pull the latest version and redeploy the application.
+
+## Reference
+
+### Event Mesh Connnectivity Bridge
+* [Documentation](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/3ea50112d436473081abeca191c5560e.html)  
+* [Get Started with Event Mesh Connectivity Plan](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html)  
+
+### Azure Event Grid
+
+* [Documentation](https://learn.microsoft.com/en-us/azure/event-grid/)  
+* [Subscribe to events through portal](https://learn.microsoft.com/en-us/azure/event-grid/subscribe-through-portal)  
+
+### Azure Functions
+
+* [Documentation](https://learn.microsoft.com/en-us/azure/azure-functions/)  
+* [Azure Queue storage trigger for Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=in-process%2Cextensionv5&pivots=programming-language-csharp)  
+* [JavaScript function in Azure using Visual Studio Code](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-node)  
+
+### Azure Communication services
+* [Documentation](https://learn.microsoft.com/en-us/azure/communication-services/)  
+* [Email Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/concepts/email/prepare-email-communication-resource)  
+* [Email in Azure Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/concepts/email/email-overview)   
+* [Create and manage Email Communication Service resource](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/create-email-communication-resource)  
+* [Add Azure Managed Domains to Email Communication Service](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/add-azure-managed-domains)   
+
+
+## Disclaimer
+This project has been a proof of concept, including several limitations and prerequisites. The objective was to build end-to-end flow with a new event connector from SAP Event Mesh to Azure Event Grid. For this reason, the implementation should not be seen as any recommendation for production. It fulfils the purpose and requirements of a proof of concept and is not intended for productive usage. It has been declared as pure proof of concept only to give the development teams ideas for solving potential challenges.
 
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+[Create an issue](https://github.tools.sap/btp-use-case-factory/Event-Mesh-Connectivity-Plan/issues) in this repository if you find a bug or have questions about the content. For additional support, [ask a question in the SAP Community.](https://answers.sap.com/questions/ask.html)
+
+## Code of Conduct
+Refer to [CODE OF CONDUCT](./CODE_OF_CONDUCT.md) file.
 
 ## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+If you wish to contribute code, offer fixes or improvements, send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation.](https://developercertificate.org/)
+
+Refer to the [CONTRIBUTING](./CONTRIBUTING.md) file for guidelines to contributions from external parties.
+
+For additional support, [ask a question in the SAP Community.](https://answers.sap.com/questions/ask.html)
 
 ## License
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0, except as noted otherwise in the LICENSE file.
