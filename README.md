@@ -4,10 +4,11 @@
 
 ## Description
 
-SAP Event Mesh is a fully-managed cloud service for enabling applications, integrations and extensions to communication asynchronously through events. Events are significatnt changes in state(for example, Business Partner updated in SAP S/4HANA).
+SAP Event Mesh is a fully-managed cloud service for enabling applications, integrations and extensions to communication asynchronously through events. Events are significatnt changes in state(for example, Purchase Requisition  updated in SAP S/4HANA).
 
-SAP Event Mesh-Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh - Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
+SAP Event Mesh Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh - Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
 
+ **Note:** Currently you will be using Beta version, soon it will be avaiable in Global account as SAP Integration Suite's component. 
 
 ## Table of Contents
 [Scenario](#scenario)\
@@ -44,11 +45,14 @@ A SAP Business user creates a SAP Purchase Requisition in SAP S/4HANA which gene
 
 These are the technical prerequistics for an setting up integration between SAP Event Mesh and Azure Event Grid for SAP S/4HANA event.
 
-1.	A subaccount in SAP BTP with entitlements for Event Mesh plan “event-mesh-connectivity” - beta. Reach out to askgrid@sap.com in case you do not see this service in your subaccount.
+https://jtrack.wdf.sap.corp/secure/Dashboard.jspa
+
+1.	A SAP BTP's subaccount in US20 region. Make sure, the BETA feature for the subaccount is enabled. Create a service ticket at [https://jtrack.wdf.sap.corp](https://jtrack.wdf.sap.corp) using the "Event Mesh - Enterprise Messaging" component to share the details of the sub-account, so that we can allow your sub-account to create an instance of event-mesh-connectivity-beta plan. Once your sub-account is allowed, you can start creating an instance of the event bridge (event-mesh-connectivity-beta) and start exploring.
+
 2.	SAP S/4HANA 2020(MQTT Adapter) or SAP S/4HANA 2021+(AMQP Adapter) system to act as an event publisher.
-3.	Microsoft Azure subscription. 
-4.  A verified Partner Registration ID. Reach out to askgrid@sap.com in case you do not have.   
-5.	Relevant service principals with RBACs and roles in Azure for provider, application, event flow.
+3.	Microsoft Azure subscription with Azure Event Grid instance. you can opt Azure trial version also.
+
+For More information, refer to [Get Started with Event Mesh Connectivity Plan (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html)
 
 ## Configuration and Development
 
@@ -70,13 +74,14 @@ In this project, the Microsoft Azure function app has been implemented based on 
 
 ## Known Issues
 
-No known issues.
+ * In RFC Destination creation in Step 4 Editing the port number through SM59 transaction is a temporary solution which will not be required when the service goes LIVE.
 
 ## Reference
 
 ### Event Mesh Connnectivity Bridge
 * [Event Mesh Connectivity Plan Concepts (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/3ea50112d436473081abeca191c5560e.html).  
-* [Get Started with Event Mesh Connectivity Plan (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html).  
+* [Get Started with Event Mesh Connectivity Plan (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html).
+* [SAP Event Mesh: Event Connector to Microsoft Azure to go Beta](https://blogs.sap.com/2022/10/11/sap-event-mesh-event-bridge-to-microsoft-azure-to-go-beta/)  
 
 ### Azure Event Grid
 
