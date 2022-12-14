@@ -1,14 +1,14 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-event-mesh-connectivity-bridge)](https://api.reuse.software/info/github.com/SAP-samples/btp-event-mesh-connectivity-bridge)
 
-# Integrate Events Between SAP and Microsoft using SAP Event Mesh - Connectivity Bridge Service
+# Integrate Events Between SAP and Microsoft using SAP Event Mesh Connectivity Bridge Service
 
 ## Description
 
-SAP Event Mesh is a fully-managed cloud service for enabling applications, integrations and extensions to communication asynchronously through events. Events are significatnt changes in state(for example, Purchase Requisition  updated in SAP S/4HANA).
+SAP Event Mesh Connectivity Bridge Service is a fully-managed cloud service for enabling applications, integrations and extensions to communication asynchronously through events. Events are significatnt changes in state(for example, Purchase Requisition  updated in SAP S/4HANA).
 
-SAP Event Mesh Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh - Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
+SAP Event Mesh Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
 
- **Note:** Currently you will be using Beta version, soon it will be avaiable in Global account as SAP Integration Suite's component. 
+ **Note:** Currently you will be using beta version, soon it will be available in global account as a service SAP Integration Suite. 
 
 ## Table of Contents
 [Scenario](#scenario)\
@@ -44,13 +44,12 @@ A SAP Business user creates a SAP Purchase Requisition in SAP S/4HANA which gene
 ## Requirements
 
 These are the technical prerequistics for an setting up integration between SAP Event Mesh and Azure Event Grid for SAP S/4HANA event.
-1.	A SAP BTP's subaccount in US20 region. Make sure, the BETA feature for the subaccount is enabled. 
-    * Create a service ticket at [https://jtrack.wdf.sap.corp](https://jtrack.wdf.sap.corp) using the "Event Mesh - Enterprise Messaging" component to share the details of the sub-account, so that we can allow your sub-account to create an instance of event-mesh-connectivity-beta plan. 
-    * Once your sub-account is allowed, you can start creating an instance of the event bridge (event-mesh-connectivity-beta) and start exploring.
+1.	A SAP BTP's subaccount in US20 region. Make sure the BETA feature for the subaccount is enabled. 
+    * Create a service ticket in [https://jtrack.wdf.sap.corp](https://jtrack.wdf.sap.corp) using the "Event Mesh - Enterprise Messaging" component to share the details of the subaccount, so that SAP can allow to create an instance of event-mesh-connectivity-beta plan in your subaccount. 
 2.	SAP S/4HANA 2020(MQTT Adapter) or SAP S/4HANA 2021+(AMQP Adapter) system to act as an event publisher.
 3.	Microsoft Azure subscription with Azure Event Grid instance. you can opt Azure trial version also.
 
-For More information, refer to [Get Started with Event Mesh Connectivity Plan (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html)
+For more information, refer to [Get Started with Event Mesh Connectivity Plan (Beta)](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/c649cd7a833e4654ace1b9928cc17a06.html).
 
 ## Configuration and Development
 
