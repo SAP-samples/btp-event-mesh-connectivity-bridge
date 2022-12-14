@@ -44,11 +44,9 @@ A SAP Business user creates a SAP Purchase Requisition in SAP S/4HANA which gene
 ## Requirements
 
 These are the technical prerequistics for an setting up integration between SAP Event Mesh and Azure Event Grid for SAP S/4HANA event.
-
-https://jtrack.wdf.sap.corp/secure/Dashboard.jspa
-
-1.	A SAP BTP's subaccount in US20 region. Make sure, the BETA feature for the subaccount is enabled. Create a service ticket at [https://jtrack.wdf.sap.corp](https://jtrack.wdf.sap.corp) using the "Event Mesh - Enterprise Messaging" component to share the details of the sub-account, so that we can allow your sub-account to create an instance of event-mesh-connectivity-beta plan. Once your sub-account is allowed, you can start creating an instance of the event bridge (event-mesh-connectivity-beta) and start exploring.
-
+1.	A SAP BTP's subaccount in US20 region. Make sure, the BETA feature for the subaccount is enabled. 
+    * Create a service ticket at [https://jtrack.wdf.sap.corp](https://jtrack.wdf.sap.corp) using the "Event Mesh - Enterprise Messaging" component to share the details of the sub-account, so that we can allow your sub-account to create an instance of event-mesh-connectivity-beta plan. 
+    * Once your sub-account is allowed, you can start creating an instance of the event bridge (event-mesh-connectivity-beta) and start exploring.
 2.	SAP S/4HANA 2020(MQTT Adapter) or SAP S/4HANA 2021+(AMQP Adapter) system to act as an event publisher.
 3.	Microsoft Azure subscription with Azure Event Grid instance. you can opt Azure trial version also.
 
