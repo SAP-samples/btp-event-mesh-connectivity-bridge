@@ -7,7 +7,7 @@ In this page, you will setup the subaccount in SAP BTP for enabling SAP Event Me
 
 2. Create a global account that has the entitlement to use Event Mesh. Refer to [Getting a Global Account.](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d61c2819034b48e68145c45c36acba6e.html#loiod61c2819034b48e68145c45c36acba6e)
 
-3. Create a subaccount in us20 region. Refer to [Create a Subaccount in the Cloud Foundry Environment.](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/05280a123d3044ae97457a25b3013918.html)
+3. Create a subaccount in us20 region and must be beta enabled. Refer to [Create a Subaccount in the Cloud Foundry Environment.](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/05280a123d3044ae97457a25b3013918.html)
 
 4. Create a space within the subaccount in which Cloud Foundry is enabled. Refer to [Managing Orgs and Spaces Using the Cockpit.](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/c4c25cc63ac845779f76202360f98694.html)
 
@@ -81,7 +81,24 @@ In this page, you will setup the subaccount in SAP BTP for enabling SAP Event Me
     An instance of SAP Event Mesh is created and ready to use.
     ![Alt](./images/10-instanceready.png)
 
-### 4. Assign Roles to Users
+### 4. Subscribe to the SAP Event Mesh Application
+
+When you subscribe to the Event Mesh standard application plan in SAP BTP cockpit, a link to the Event Mesh application is enabled.
+
+1. In the SAP BTP cockpit, navigate to your subaccount and choose **Instances and Subscriptions** and choose **Create**.
+
+    ![Alt](./images/15-createsubscription.png)
+
+2. Scroll through the **Service list** and choose **Event Mesh** in the **Service** dropdown field and **standard** in the **Plan** dropdown field.
+
+    ![Alt](./images/16-newsubscription.png)
+
+3. Choose **Create**.
+
+4. The application **Event Mesh** appears in the **Subscription** tab.
+![Alt](./images/17-createdsubscription.png)
+
+### 5. Assign Roles to Users
 
 The service provides standard roles for typical user profiles. You can configure application roles and then assign users to these roles using the SAP BTP cockpit.
 Determine the roles or role collections to assign to your users.
@@ -104,24 +121,6 @@ For more information on roles, refer to User Roles for Event Mesh.
     ![Alt](./images/14-verifyrolecollection.png)
 
 Once you have role permissions assigned to your user, you can access the Event Mesh Application.
-
-### 5. Subscribe to the SAP Event Mesh Application
-
-When you subscribe to the Event Mesh standard application plan in SAP BTP cockpit, a link to the Event Mesh application is enabled.
-
-1. in the SAP BTP cockpit, navigate to your subaccount and choose **Instances and Subscriptions** and choose **Create**.
-
-    ![Alt](./images/15-createsubscription.png)
-
-2. Scroll through the **Service list** and choose **Event Mesh** in the **Service** dropdown field and **standard** in the **Plan** dropdown field.
-
-    ![Alt](./images/16-newsubscription.png)
-
-3. Choose **Create**.
-
-4. The application **Event Mesh** appears in the **Subscription** tab.
-![Alt](./images/17-createdsubscription.png)
-
 
 > **Note:** If you try to access the application before roles are assigned to your user, then caching issues can prevent access. To resolve this issue, refer to Guided AnswersInformation published on SAP site.
 
