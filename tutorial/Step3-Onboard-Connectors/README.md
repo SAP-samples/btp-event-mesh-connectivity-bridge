@@ -91,8 +91,8 @@ Get credentials for publishing to event mesh for S4 On-prem
     <p><img src="./images/11-createservicekey.png"></p>
 
  6.	In the New Service Key wizard, enter a name of your choice for **Service Key Name** field and for the  **Configure Binding Parameters** field, copy the below value.
- * **compatibility** is true
- * **applicationID** is application id of s4-onprem onboarded in step 2 OR application id of s/4 connector.
+ 1. **compatibility** is true 
+ 2. **applicationID** is the application id of s/4 connector which you have created in step 2.
 
     ``` 
     {
