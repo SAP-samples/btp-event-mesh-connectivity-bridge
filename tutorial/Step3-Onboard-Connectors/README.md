@@ -24,7 +24,8 @@ To realize the advantages of integration between SAP Event Mesh and Azure Event 
 * **Name:** Add a meaningful name for the connector that helps you identify it. There is a 1:1 relationship between Event Mesh and a connector.
 * **Azure Resource Group:** Identify the resource group in Azure where events from Event Mesh will be available for consumption.
 * **Azure Subscription ID:** Identify the pool of resources in Azure that you want to connect to Event Mesh.
-* If events flow from Event Mesh to Azure Event Grid, identify the Partner Topic in Azure where events should be queued.
+* If it is **For Events Flow from Event Mesh to Azure Event Grid**, Enter Partner Topic of your choice which is uniqued in Azure where events should be queued.
+
 
 6. Choose **Save**.
 
@@ -89,12 +90,14 @@ Get credentials for publishing to event mesh for S4 On-prem
 
     <p><img src="./images/11-createservicekey.png"></p>
 
- 6.	In the New Service Key wizard, enter a name of your choice for **Service Key Name** field and for the  **Configure Binding Parameters** field, copy the below value.  
+ 6.	In the New Service Key wizard, enter a name of your choice for **Service Key Name** field and for the  **Configure Binding Parameters** field, copy the below value.
+ * **compatibility** is true
+ * **applicationID** is application id of s4-onprem onboarded in step 2 OR application id of s/4 connector.
 
     ``` 
     {
       “compatibility”: true,
-      “applicationID”: {app-id-of-s4-on-prem-onboarded-in-step-7}
+      “applicationID”: {app-id-of-s4-on-prem-onboarded-in-step-2}
     }
     ```
  7. Choose **Create**.

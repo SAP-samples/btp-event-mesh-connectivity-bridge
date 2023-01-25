@@ -38,7 +38,10 @@ In this section, you will create Azure storage account to save all the events th
 3. Select your plan in the **Plan** dropdown field and then choose **Create**.
     <p><img src="./images/08-createstorage.png"></p>
 
-4. In the **Basics** tab, enter the following values for each setting as shown in the screenshot.
+4. In the **Basics** tab,
+    - In the **Project details** section, in the **Subscription** field, select your Microsoft Azure subscription and the **Resource group**.
+    - enter the following values for each setting as shown in the screenshot.
+
     <p><img src="./images/09-createdetailstorage.png"></p>
 
 5. Choose **Review + create** to validate your selected options and to ensure all the required fields are selected.
