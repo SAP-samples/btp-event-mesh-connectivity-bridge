@@ -30,7 +30,7 @@ Use Visual Studio Code to create a JavaScript function.
     - In the **Resource Group** dropdown field, select the name of the resource group you have created.
     - In the **Function App name** field, enter a name of your choice.
     - In the **Publish** field, select **Code** as option.
-    - In the **Runtime stack** dropdown menu, choose **Node.js** and select **16LTS** in the **Version** dropdown menu.
+    - In the **Runtime stack** dropdown menu, choose **Node.js** and select **16LTS** in the **Version** dropdown menu or select your node version.
     - In the **Region** dropdown field, select your region.  Refer [Azure geographies](https://azure.microsoft.com/en-gb/explore/global-infrastructure/geographies/) that's near you or near other services that your functions can access.
 
 6. Choose **Next : Hosting**.
@@ -156,6 +156,6 @@ Use Visual Studio Code to create a JavaScript function.
 
     <p><img src="./images/24.png"></p>
 
-    Output shows deployment and settings uploads is successfull.
+    Output shows deployment and settings uploads is successful.
     
     <p><img src="./images/25.png"></p>

@@ -2,7 +2,7 @@
 
 In this tutorial, as a SAP S/4HANA administrator you will create a channel where SAP S/4HANA business objects pass events to SAP Event Mesh.
 
-The version of SAP S/4HANA system in this tutorial in SAP S/4HANA 2020. Refer to [Create Channel in SAP S/4HANA20202](https://help.sap.com/docs/SAP_EM/aed036b16919439baee3ca379cad1112/73f8d261e984427bbb5c2ea35b97bf55.html?state=DRAFT&version=Dev).
+The version of SAP S/4HANA system in this tutorial in SAP S/4HANA 2020. Refer to [Create Channel in SAP S/4HANA2020](https://help.sap.com/docs/SAP_EM/aed036b16919439baee3ca379cad1112/73f8d261e984427bbb5c2ea35b97bf55.html?state=DRAFT&version=Dev).
 
 ### 1. Create a channel
 
