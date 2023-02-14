@@ -20,7 +20,7 @@ You have Microsoft Azure Subscription to receive events from SAP Event Mesh Conn
 
     - In the **Topic Details** section, the **Source Resource** is auto populated with the topic resource.
 
-    - In the **Endpoint Details** section, for the **Endpoint Types** field, select **Storage Queues** and choose **Select and endpoint**.
+    - In the **Endpoint Details** section, for the **Endpoint Types** field, select **Storage Queues** and choose **Select an endpoint**.
    
     <p><img src="./images/03.png"></p>
 
