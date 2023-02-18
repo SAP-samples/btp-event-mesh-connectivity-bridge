@@ -8,7 +8,7 @@ SAP Event Mesh Connectivity Bridge Service is a fully-managed cloud service for 
 
 SAP Event Mesh Connectivity Bridge service's integration with Azure Event Grid enables SAP World to send events to Microsoft Azure. In this tutorial, you will be using the Beta version of SAP Event Mesh Connectivity Bridge service which enables direct connection between SAP BTP Event Mesh to Azure Event Grid. You can develop event driven integrations and applications using this service.
 
- **Note:** Currently you will be using beta version, soon it will be available in global account as a service SAP Integration Suite. 
+ **Note:** Currently you will be using beta version, soon it will be available in global account as a service SAP Integration Suite.  
 
 ## Table of Contents
 [Scenario](#scenario)\
